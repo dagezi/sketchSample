@@ -1,0 +1,9 @@
+dependencies:
+  override:
+    - curl -L -o sketchtool-latest.zip http://www.sketchapp.com/download/sketchtool/sketchtool-latest.zip
+    - unzip sketchtool-latest.zip
+    - sh -x sketchtool/install.sh
+
+test:
+  override:
+    - script/circle-png.sh "$CIRCLE_ARTIFACTS"
