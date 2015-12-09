@@ -39,7 +39,7 @@ img { margin: 4px; }
 </style>
 </head>
 <body>
-<a href="android.zip">zipped file</a>
+<a href="$destDir/android/android.zip">zipped file</a>
 
 <h1>Icons</h1>
 EOF
@@ -54,3 +54,5 @@ EOF
 
 generateForASketch icons.sketch
 generateIndex
+
+rm sketchtool*.zip
