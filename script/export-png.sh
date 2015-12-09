@@ -23,10 +23,10 @@ generateForASketch() {
     mkdir -p "$destDirForASketch"
     sketchtool export slices "$srcFile" --output="$destDirForASketch"
 
-    distributeFile "$destDirForASketch" "$destDir/android/xxhdpi" "@3x"
-    distributeFile "$destDirForASketch" "$destDir/android/xhdpi" "@2x"
-    distributeFile "$destDirForASketch" "$destDir/android/hdpi" "@1.5x"
-    distributeFile "$destDirForASketch" "$destDir/android/mdpi" ""
+    distributeFile "$destDirForASketch" "$destDir/android/drawable-xxhdpi" "@3x"
+    distributeFile "$destDirForASketch" "$destDir/android/drawable-xhdpi" "@2x"
+    distributeFile "$destDirForASketch" "$destDir/android/drawable-hdpi" "@1.5x"
+    distributeFile "$destDirForASketch" "$destDir/android/drawable-mdpi" ""
 
     (cd $destDir/android; zip android.zip -r *dpi)
 }
