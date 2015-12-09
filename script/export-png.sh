@@ -31,4 +31,26 @@ generateForASketch() {
     (cd $destDir/android; zip android.zip -r *dpi)
 }
 
+generateIndex() {
+    cat > index.html <<EOF
+<html><head><title>Icons</title>
+<style>
+img { margin: 4px; }
+</style>
+</head>
+<body>
+<a href="android.zip">zipped file</a>
+
+<h1>Icons</h1>
+EOF
+
+    find . -name '*.png' | sed 's,.*,<img title="&" src="&" >,' >> index.html
+
+    cat >> index.html <<EOF
+</body></html>
+EOF
+}
+
+
 generateForASketch icons.sketch
+generateIndex
